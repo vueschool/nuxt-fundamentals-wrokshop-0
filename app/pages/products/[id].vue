@@ -1,21 +1,9 @@
 <script setup>
 const { id: productId } = useRoute().params;
 
-const product = ref(null);
-
-const { data } = await useAsyncData(
-  () =>
-    $fetch("/api/product", {
-      params: {
-        id: productId,
-      },
-    }),
-  {
-    pick: ["id", "title", "images", "price"],
-  }
-);
-
-product.value = data.value;
+const { data: product } = await useFetch(`/api/products/${productId}`, {
+  pick: ["id", "title", "images", "price"],
+});
 </script>
 
 <template>
