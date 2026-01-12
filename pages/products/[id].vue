@@ -1,35 +1,51 @@
 <script setup>
 const { id: productId } = useRoute().params;
 
-const { data: product, error } = await useAsyncData(
-  () => {
-    return $fetch("/api/product", {
-      params: {
-        id: productId,
-      },
-    });
-  },
-  {
+const { data: product, error } = await useAsyncData(() => {
+  return $fetch(`/api/products/${productId}`, {
     pick: ["id", "title", "images", "price"],
-  }
-);
-
-if (error.value) {
-  throw createError({
-    statusCode: 500,
-    statusMessage: "Sorry, we couldn't load this page!",
-    fatal: true,
   });
-}
+});
+
+// display a full error page if the error is not null
+watch(
+  error,
+  (newError) => {
+    if (newError) {
+      throw createError({
+        status: 500,
+        message: "Message: Sorry, something went wrong! Try again later.",
+        statusMessage:
+          "Status Message: Sorry, something went wrong! Try again later.",
+        statusText:
+          "Status Text: Sorry, something went wrong! Try again later.",
+        fatal: true,
+      });
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
   <div>
     <section v-if="product">
       <div class="max-w-sm w-full h-96 bg-stone-900 rounded-lg">
-        <UCarousel v-slot="{ item }" :items="product.images" :ui="{ item: 'basis-full' }" class="h-96" indicators>
+        <UCarousel
+          v-slot="{ item }"
+          :items="product.images"
+          :ui="{ item: 'basis-full' }"
+          class="h-96"
+          indicators
+        >
           <div class="w-96 h-96 flex justify-center items-center">
-            <img width="300" height="300" :src="item" class="object-contain" draggable="false" />
+            <img
+              width="300"
+              height="300"
+              :src="item"
+              class="object-contain"
+              draggable="false"
+            />
           </div>
         </UCarousel>
       </div>
@@ -41,7 +57,8 @@ if (error.value) {
     </section>
     <section v-else>
       <p>
-        Looks like we failed to load the product! We should handle the error coming from
+        Looks like we failed to load the product! We should handle the error
+        coming from
         <code>useAsyncData</code>.
       </p>
     </section>
