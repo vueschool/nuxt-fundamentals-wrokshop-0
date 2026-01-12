@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.19.2",
+    "@nuxt/ui": "^4.3.0",
     "nuxt": "^4.2.2",
     "vue": "latest",
     "vue-router": "latest"
