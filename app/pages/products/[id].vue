@@ -1,16 +1,9 @@
 <script setup>
 const { id: productId } = useRoute().params;
 
-const { data: product, error } = await useAsyncData(
-  () => {
-    return $fetch(`/api/products/${productId}`, {
-      pick: ["id", "title", "images", "price"],
-    });
-  },
-  {
-    deep: true,
-  }
-);
+const { data: product, error } = await useFetch(`/api/products/${productId}`, {
+  pick: ["id", "title", "images", "price"],
+});
 
 useSeoMeta({
   title: () => product.value.title,
@@ -60,7 +53,6 @@ watch(
 
       <div class="mt-5">
         <h1>{{ product.title }}</h1>
-        <UInput v-model="product.title" />
         <p>${{ product.price }}</p>
       </div>
     </section>
