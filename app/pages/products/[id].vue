@@ -1,9 +1,12 @@
 <script setup>
 const { id: productId } = useRoute().params;
 
-const { data: product } = await useFetch(`/api/products/${productId}`, {
-  pick: ["id", "title", "images", "price"],
-});
+const { data: product } = await useAsyncData(
+  () => $fetch(`/api/products/${productId}`),
+  {
+    pick: ["id", "title", "images", "price"],
+  }
+);
 </script>
 
 <template>
