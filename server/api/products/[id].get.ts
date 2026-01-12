@@ -6,10 +6,6 @@ export default defineEventHandler(async (event) => {
     price: number;
   }
 
-  type apiResponse = {
-    product: Product;
-  };
-
   const productId = getRouterParam(event, "id") || 0;
 
   if (!productId)
@@ -18,7 +14,7 @@ export default defineEventHandler(async (event) => {
       statusText: "Missing product ID parameter.",
     });
 
-  const product = await $fetch<apiResponse>(
+  const product = await $fetch<Product>(
     `https://dummyjson.com/products/${productId}?select=id,title,images,price`
   );
 
