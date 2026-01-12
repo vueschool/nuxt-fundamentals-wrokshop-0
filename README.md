@@ -1,75 +1,45 @@
-# Nuxt Minimal Starter
+# Nuxt Fundamentals Workshop
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This repository is used to the [Nuxt Fundamentals Workshop](https://vueschool.io/workshops/nuxt-js-fundamentals-workshop) by [Vue School](https://vueschool.io/)
 
-## Setup
+## Project Setup
 
-Make sure to install dependencies:
+1. Download the Boilerplate Code
+2. Ensure you're on Node +v20.x.x (LTS)
+   1. If you need to switch versions of node you can use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm)
+   2. Also note, your version of Node MIGHT work just fine, we just haven’t tested the project on a lower version.
+3. Install dependencies
 
-```bash
-# npm
+```html
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+1. Startup development server
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+```html
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Project Structure
 
-Build the application for production:
+Each challenge has two branches: '-begin' and '-end'.
 
-```bash
-# npm
-npm run build
+The 'begin' branch includes the starting point or boilerplate, while the 'end' branch contains the solution for reference.
 
-# pnpm
-pnpm build
+To start working on a specific exercise:
 
-# yarn
-yarn build
+- Run in VS Code terminal: `git checkout {exerciseNumber}-begin`
+  > 💡 Replace `{exerciseNumber}` with the exercise number.
 
-# bun
-bun run build
-```
+Before moving to a new branch, you might need to commit your changes or reset them.
 
-Locally preview production build:
+- To reset your local branch and remove all changes: `git reset --hard && git clean -df`
 
-```bash
-# npm
-npm run preview
+## IDE Setup
 
-# pnpm
-pnpm preview
+1. Install and enable [Vue Language Extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
-# yarn
-yarn preview
+# Helpful Resources
 
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [Nuxt Docs](https://nuxt.com/)
+- [Vue Language Features VS Code Extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar)

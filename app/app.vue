@@ -5,6 +5,7 @@
 </template>
 
 <style>
+@reference "@/assets/css/main.css";
 .app-wrapper {
   @apply h-screen relative text-lg;
 }
