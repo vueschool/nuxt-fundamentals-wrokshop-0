@@ -14,11 +14,9 @@ watch(
     if (newError) {
       throw createError({
         status: 500,
-        message: "Message: Sorry, something went wrong! Try again later.",
-        statusMessage:
-          "Status Message: Sorry, something went wrong! Try again later.",
+        message: error.value?.message || "Error fetching product data",
         statusText:
-          "Status Text: Sorry, something went wrong! Try again later.",
+          "Sorry, something went wrong! Try again later. (User Friendly Message)",
         fatal: true,
       });
     }
