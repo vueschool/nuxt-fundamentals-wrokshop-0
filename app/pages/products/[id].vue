@@ -14,17 +14,13 @@ const { data: product, error } = await useAsyncData(
   }
 );
 
-if (error.value) {
-  // Create and throw a nuxt error
-}
+// display a full error page if the error is not null
 </script>
 
 <template>
   <div>
     <section v-if="product">
-      <div
-        class="max-w-sm w-full h-96 bg-stone-900 rounded-lg"
-      >
+      <div class="max-w-sm w-full h-96 bg-stone-900 rounded-lg">
         <UCarousel
           v-slot="{ item }"
           :items="product.images"
@@ -32,9 +28,7 @@ if (error.value) {
           class="h-96"
           indicators
         >
-          <div
-            class="w-96 h-96 flex justify-center items-center"
-          >
+          <div class="w-96 h-96 flex justify-center items-center">
             <img
               width="300"
               height="300"
@@ -53,8 +47,8 @@ if (error.value) {
     </section>
     <section v-else>
       <p>
-        Looks like we failed to load the product! We should
-        handle the error coming from
+        Looks like we failed to load the product! We should handle the error
+        coming from
         <code>useAsyncData</code>.
       </p>
     </section>
