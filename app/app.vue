@@ -4,7 +4,21 @@
   <div
     class="text-center dark:text-gray-200 text-gray-800 absolute-center h-screen flex flex-col justify-center items-center"
   >
-    <h1 class="font-semibold text-5xl text-primary">Nuxt Fundamentals Workshop</h1>
-    <p class="text-lg font-normal mt-3">Use the repo branches to navigate through the exercises</p>
+    <h1 class="font-semibold text-5xl text-primary">
+      Nuxt Fundamentals Workshop
+    </h1>
+    <p class="text-lg font-normal mt-3">
+      Use the repo branches to navigate through the exercises
+    </p>
+    <NuxtErrorBoundary>
+      <template #error="{ error, clearError }">
+        <div>
+          <h1>Error</h1>
+          <p>{{ error.message }}</p>
+          <UButton @click="clearError">Clear Error</UButton>
+        </div>
+      </template>
+      <MyWidget />
+    </NuxtErrorBoundary>
   </div>
 </template>
