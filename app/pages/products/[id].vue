@@ -1,10 +1,8 @@
 <script setup>
 const { id: productId } = useRoute().params;
 
-const { data: product, error } = await useAsyncData(() => {
-  return $fetch(`/api/products/${productId}`, {
-    pick: ["id", "title", "images", "price"],
-  });
+const { data: product, error } = await useFetch(`/api/products/${productId}`, {
+  pick: ["id", "title", "images", "price"],
 });
 
 // display a full error page if the error is not null
