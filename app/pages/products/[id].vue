@@ -2,7 +2,7 @@
 // Use the productId variable to pass the id as parameter with the fetch request
 const { id: productId } = useRoute().params;
 
-// Update this variable ref with the data
+// Replace this variable ref with the data
 const product = ref(null);
 </script>
 

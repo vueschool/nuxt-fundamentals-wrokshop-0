@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     product: Product;
   };
 
-  const productId = getQuery(event)?.id || 0;
+  const productId = getRouterParam(event, "id") || 0;
 
   if (!productId)
     return createError({

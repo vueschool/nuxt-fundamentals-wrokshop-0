@@ -1,5 +1,5 @@
 <script setup>
-// Update this variable ref with the data
+// Replace this variable ref with the data
 const products = ref([]);
 </script>
 
