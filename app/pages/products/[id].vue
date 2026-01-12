@@ -7,6 +7,11 @@ const { data: product } = await useAsyncData(
     pick: ["id", "title", "images", "price"],
   }
 );
+
+// even better since it's an internal API request
+// const { data: product, error } = await useFetch(`/api/products/${productId}`, {
+//   pick: ["id", "title", "images", "price"],
+// });
 </script>
 
 <template>
