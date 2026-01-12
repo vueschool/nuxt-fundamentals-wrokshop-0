@@ -7,6 +7,9 @@ const { data: products } = await useFetch("/api/products", {
 
       return restOfProperties;
     }),
+  getCachedData(key, nuxtApp) {
+    return nuxtApp.payload.data[key];
+  },
 });
 </script>
 
