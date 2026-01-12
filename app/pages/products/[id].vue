@@ -15,7 +15,8 @@ watch(
       throw createError({
         status: 500,
         message: error.value?.message || "Error fetching product data",
-        statusText:
+        // or statusText
+        statusMessage:
           "Sorry, something went wrong! Try again later. (User Friendly Message)",
         fatal: true,
       });
