@@ -3,6 +3,7 @@
 This repository is used to the [Nuxt Fundamentals Workshop](https://vueschool.io/workshops/nuxt-js-fundamentals-workshop) by [Vue School](https://vueschool.io/)
 
 - [Exercises](https://www.notion.so/vueschool/Nuxt-Fundamentals-Workshop-Exercises-1430191fbda9802f89c3e4838943c696)
+- [Slides](https://vueschool.slides.com/moose_said/nuxt-fundamentals-workshop)
 
 ## Project Setup
 
